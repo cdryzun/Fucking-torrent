@@ -1,0 +1,56 @@
+name: CI
+
+env:
+  OUTPUT_FILE: "trackers.txt"
+
+on:
+  schedule:
+    - cron: "15 4 * * *"
+  push:
+    branches:
+      - main
+
+jobs:
+    greeting_job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
+            uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+            with:
+              depth: 1
+              branch: 'master'
+              owner: 'ngosang'
+              repository: 'trackerslist'
+          - name: "Generate trackers list"
+            run: |
+                # Exec scripts
+                ls -la
+                for txt in `find . -type f|grep '.txt'`;do cat "${txt}"|awk -F '[/:]' '{print $4}';done|sort|uniq > ${OUTPUT_FILE}
+                # delete empty lines
+                sed -i '/^$/d' ${OUTPUT_FILE}
+          - name: "Checkout"
+            uses: actions/checkout@v4
+            with:
+              persist-credentials: false
+              fetch-depth: 0
+              path: 'fuck-tracker'
+          - name: "Commit and push"
+            run: |
+              #  install openssh & add sshkey auth 
+              sudo apt update
+              sudo apt install -y openssh-client openssh-server
+              eval $(ssh-agent -s)
+              echo "${{ secrets.REPO_SSH_KEY }}" | ssh-add -
+              mkdir -p ~/.ssh
+              ssh-keyscan github.com >> ~/.ssh/known_hosts
+              chmod 0644 ~/.ssh/known_hosts
+
+              # copy & commit
+              \cp ${OUTPUT_FILE} fuck-tracker/
+              cd fuck-tracker
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git config --global user.name "github-actions[bot]"
+              git add .
+              git commit -m "auto: Update trackers list $(date +'%Y-%m-%d %H:%M:%S')"
+              git remote set-url origin git@github.com:${{ github.repository }}.git
+              git push

@@ -46,7 +46,12 @@ jobs:
               chmod 0644 ~/.ssh/known_hosts
 
               # copy & commit
-              \cp ${OUTPUT_FILE} fuck-tracker/
+              cat fuck-tracker/${OUTPUT_FILE} >> ${OUTPUT_FILE}
+              cat ${OUTPUT_FILE}|sort|uniq > fuck-tracker/${OUTPUT_FILE}
+              
+               # delete empty lines
+              sed -i '/^$/d' fuck-tracker/${OUTPUT_FILE}
+              
               cd fuck-tracker
               git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
               git config --global user.name "github-actions[bot]"

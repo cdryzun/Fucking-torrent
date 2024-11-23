@@ -3,6 +3,7 @@
 108.61.166.249
 109.201.134.183
 109.71.253.37
+121.199.16.229
 125.227.79.123
 130.61.158.165
 1337.abcvg.info
@@ -26,9 +27,11 @@
 193.42.111.57
 207.244.226.120
 208.83.20.20
+209.141.59.16
 209.141.59.25
 211.23.142.127
 211.75.210.220
+211.97.119.106
 211.97.119.63
 212.60.5.203
 23.153.248.83
@@ -62,6 +65,7 @@
 7.rarbg.to
 74.48.17.122
 79.116.152.105
+79.117.113.253
 8.rarbg.com
 8.rarbg.to
 83.102.180.21
@@ -278,6 +282,7 @@ tracker.fansub.id
 tracker.fatkhoala.org
 tracker.fdn.fr
 tracker.filemail.com
+tracker.files.fm
 tracker.fnix.net
 tracker.frozen-layer.com
 tracker.frozen-layer.net
@@ -325,6 +330,7 @@ tracker.tambovnet.org
 tracker.tamersunion.org
 tracker.tasvideos.org
 tracker.theempire.bz
+tracker.theoks.net
 tracker.tiny-vps.com
 tracker.tntvillage.scambioetico.org
 tracker.torrent.eu.org

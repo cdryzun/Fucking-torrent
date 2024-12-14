@@ -239,6 +239,7 @@ retracker.lanta-net.ru
 retracker.lanta.me
 retracker.spark-rostov.ru
 retracker01-msk-virt.corbina.net
+rfc5746.mywaifu.best
 run.publictracker.xyz
 saltwood.top
 secure.pow7.com

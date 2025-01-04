@@ -9,6 +9,7 @@
 116.16.45.177
 116.5.128.165
 116.5.170.2
+116.8.90.54
 117.84.129.196
 121.199.16.229
 125.227.79.123
@@ -231,6 +232,7 @@ open.nyaatorrents.info
 open.stealth.si
 open.touki.ru
 open.tracker.cl
+open.tracker.ink
 open.trackerlist.xyz
 openbittorrent.com
 opentracker.acgnx.com

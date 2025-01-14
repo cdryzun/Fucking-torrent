@@ -25,6 +25,7 @@
 15.204.56.171
 15.204.57.168
 156.234.201.18
+157.131.124.190
 176.123.1.180
 176.32.38.223
 176.99.7.59
@@ -94,6 +95,7 @@
 59.32.95.136
 59.32.95.248
 60-fps.org
+60.249.37.20
 62.171.188.15
 62.210.114.129
 65.108.102.76
@@ -258,6 +260,7 @@ pow7.com
 proaudiotorrents.org
 public.tracker.vraphim.com
 qg.lorzl.gq
+r.l5.ca
 region.nl1.privex.cc
 retracker.lanta-net.ru
 retracker.lanta.me

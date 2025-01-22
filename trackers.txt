@@ -128,6 +128,7 @@
 83.31.215.174
 83.31.219.138
 83.31.32.122
+83.31.64.195
 83.5.10.83
 83.5.56.81
 83.5.65.212
@@ -238,6 +239,7 @@ mixfiend.com
 music-torrent.net
 mvgforumtracker.mvgroup.org
 mvgroup.org
+new-line.net
 ns-1.x-fins.com
 nyaa.tracker.wf
 odd-hd.fr

@@ -13,6 +13,7 @@
 116.5.128.165
 116.5.170.2
 116.8.90.213
+116.8.90.241
 116.8.90.54
 116.8.91.220
 116.8.91.6
@@ -97,6 +98,8 @@
 37.59.48.81
 45.154.96.35
 45.9.60.30
+47.243.23.189
+47.55.183.231
 49.13.133.10
 5.161.187.83
 5.181.156.41
@@ -235,6 +238,7 @@ exodus.desync.com
 explodie.org
 finbytes.org
 fleira.no
+fosstorrents.com
 freedomalternative.com
 freerainbowtables.com
 ftp.pet

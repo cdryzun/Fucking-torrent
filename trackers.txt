@@ -8,6 +8,7 @@
 109.71.253.37
 110.187.214.118
 110.187.214.137
+110.187.214.29
 110.187.214.6
 111.90.151.241
 116.16.41.96
@@ -24,6 +25,7 @@
 117.84.129.196
 118.163.198.106
 121.199.16.229
+123.245.62.47
 125.227.79.123
 130.61.158.165
 1337.abcvg.info
@@ -397,6 +399,7 @@ tracker.bittor.pw
 tracker.breizh.pm
 tracker.bt-hash.com
 tracker.bt4g.com
+tracker.btorrent.xyz
 tracker.btsync.gq
 tracker.bz
 tracker.cloudit.top
@@ -426,6 +429,7 @@ tracker.funfile.org
 tracker.gbitt.info
 tracker.gcrenwp.top
 tracker.gcvchp.com
+tracker.ghostchu-services.top
 tracker.gigantino.net
 tracker.gigatorrents.ws
 tracker.gmi.gd
@@ -508,6 +512,7 @@ tracker810.xyz
 trackers.mlsub.net
 ttk2.nbaonlineservice.com
 uatracker.net
+utracker.ghostchu-services.top
 wepzone.net
 ws.peer.ooo
 www.all4nothin.net

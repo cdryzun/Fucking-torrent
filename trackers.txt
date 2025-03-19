@@ -1,6 +1,8 @@
 0123456789nonexistent.com
 0d.kebhana.mx
 103.251.166.126
+106.55.172.54
+107.152.127.9
 107.189.2.131
 107.189.3.200
 108.53.194.223
@@ -35,6 +37,7 @@
 1337.abcvg.info
 135.125.202.143
 138.124.183.78
+139.202.230.226
 139.202.231.170
 142.132.183.104
 144.126.245.19
@@ -380,6 +383,7 @@ torrents.artixlinux.org
 torrents.hikarinokiseki.com
 torrents.linuxmint.com
 torrentsmd.com
+torrenttracker.nwc.acsalaska.net
 torrentzilla.org
 tr.bangumi.moe
 tr.fuckbitcoin.xyz

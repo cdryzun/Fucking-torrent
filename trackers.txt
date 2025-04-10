@@ -78,6 +78,7 @@
 177.172.66.120
 177.172.66.210
 177.188.141.175
+177.188.141.32
 177.215.67.165
 179.118.132.77
 18.191.163.220
@@ -175,6 +176,7 @@
 51.222.82.36
 52.58.128.163
 54.39.48.3
+57.128.230.226
 59.32.95.136
 59.32.95.248
 60-fps.org
@@ -463,6 +465,7 @@ tracker.edkj.club
 tracker.electro-torrent.pl
 tracker.enitin.xyz
 tracker.etree.org
+tracker.expli.top
 tracker.fansub.id
 tracker.fatkhoala.org
 tracker.fdn.fr

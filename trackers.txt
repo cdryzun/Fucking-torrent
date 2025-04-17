@@ -51,6 +51,7 @@
 1337.abcvg.info
 135.125.202.143
 138.124.183.78
+138.199.241.244
 139.202.228.28
 139.202.229.106
 139.202.230.226
@@ -61,6 +62,7 @@
 139.202.231.249
 139.202.231.55
 142.132.183.104
+142.171.85.76
 144.126.245.19
 148.113.168.115
 148.252.75.241
@@ -314,6 +316,7 @@ bvarf.tracker.sh
 bz.tracker.bz
 carbon-bonsai-621.appspot.com
 ch3oh.ru
+chihaya.de
 concen.org
 d40969.acod.regrucolo.ru
 data-bg.net
@@ -374,7 +377,12 @@ open.trackerlist.xyz
 openbittorrent.com
 opentracker.acgnx.com
 opentracker.acgnx.se
+opentracker.dg2.i2p
+opentracker.eeptorrent.i2p
 opentracker.io
+opentracker.r4sas.i2p
+opentracker.simp.i2p
+opentracker.skank.i2p
 opentrackr.org
 p2p.0g.cx
 p2p.publictracker.xyz
@@ -474,6 +482,7 @@ tracker.dm258.cn
 tracker.dmcomic.org
 tracker.dump.cl
 tracker.edkj.club
+tracker.eeptorrent.i2p
 tracker.electro-torrent.pl
 tracker.enitin.xyz
 tracker.etree.org
@@ -565,6 +574,7 @@ tracker1.myporn.club
 tracker2.ctix.cn
 tracker2.dler.com
 tracker2.dler.org
+tracker2.postman.i2p
 tracker3.dler.org
 tracker3.itzmx.com
 tracker4.dler.org

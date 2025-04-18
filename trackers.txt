@@ -150,6 +150,7 @@
 222.216.138.211
 222.216.139.165
 222.216.139.217
+222.216.139.72
 222.84.22.86
 222.84.23.141
 23.134.88.9
@@ -169,6 +170,7 @@
 37.59.48.81
 4.tracker.devnak.win
 45.154.96.35
+45.155.53.144
 45.9.60.30
 46.232.55.100
 46.3.96.144
@@ -544,6 +546,7 @@ tracker.tamersunion.org
 tracker.tasvideos.org
 tracker.theempire.bz
 tracker.theoks.net
+tracker.therarbg.to
 tracker.tiny-vps.com
 tracker.tntvillage.scambioetico.org
 tracker.torrent.eu.org

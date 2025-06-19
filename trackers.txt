@@ -282,6 +282,7 @@
 83.31.194.235
 83.31.197.7
 83.31.202.154
+83.31.208.224
 83.31.210.200
 83.31.213.86
 83.31.215.174
@@ -514,6 +515,7 @@ tr.nyacat.pw
 tr.zukizuki.org
 tr1.aag.moe
 tr4ck3r.duckdns.org
+track3r.site
 trackarr.org
 tracker-de.ololosh.space
 tracker-udp.gbitt.info

@@ -77,6 +77,7 @@
 142.132.183.104
 142.171.85.76
 144.126.245.19
+145.223.96.109
 148.113.168.115
 148.252.75.241
 15.204.56.171
@@ -88,6 +89,7 @@
 156.234.201.18
 157.131.124.190
 160.251.231.187
+167.253.78.20
 176.123.1.180
 176.32.38.223
 176.56.6.77
@@ -140,6 +142,7 @@
 187.56.163.140
 187.56.205.91
 189.18.127.125
+189.18.127.57
 189.18.96.56
 189.18.97.116
 189.69.168.180
@@ -157,6 +160,7 @@
 191.255.193.44
 193.177.162.187
 193.233.161.213
+193.31.26.113
 193.42.111.57
 194.110.247.18
 194.195.86.132
@@ -225,6 +229,7 @@
 23.157.120.14
 23.163.56.66
 23.168.232.9
+23.175.184.30
 31.38.161.123
 34.89.91.10
 34.94.76.146
@@ -234,6 +239,9 @@
 37.27.188.67
 37.59.48.81
 4.tracker.devnak.win
+43.154.112.29
+45.146.254.59
+45.154.214.21
 45.154.96.35
 45.155.53.144
 45.9.60.30
@@ -258,6 +266,8 @@
 51.159.89.93
 51.222.82.36
 52.58.128.163
+54.36.179.216
+54.37.38.200
 54.39.48.3
 57.128.230.226
 59.32.95.136
@@ -299,6 +309,7 @@
 79.117.63.250
 8.rarbg.com
 8.rarbg.to
+82.67.44.197
 83.102.180.21
 83.146.104.30
 83.146.105.110
@@ -355,6 +366,7 @@
 91.208.197.19
 91.216.110.53
 93.158.213.92
+94.136.190.183
 94.23.207.177
 94.243.222.100
 95.217.167.10
@@ -421,6 +433,7 @@ elitezones.ro
 evan.im
 exodus.desync.com
 explodie.org
+extracker.dahrkael.net
 finbytes.org
 fleira.no
 fosstorrents.com
@@ -429,7 +442,9 @@ freerainbowtables.com
 ftp.pet
 funfile.org
 git.vulnix.sh
+glotorrents.pw
 hdreactor.org
+hificode.in
 highteahop.top
 home.yxgz.club
 ipv4.rer.lol
@@ -470,6 +485,7 @@ opentracker.acgnx.com
 opentracker.acgnx.se
 opentracker.dg2.i2p
 opentracker.eeptorrent.i2p
+opentracker.fattydove.i2p
 opentracker.io
 opentracker.r4sas.i2p
 opentracker.simp.i2p
@@ -478,11 +494,13 @@ opentrackr.org
 p2p.0g.cx
 p2p.publictracker.xyz
 p4p.arenabg.com
+passpulse.net
 peertube.cpy.re
 potuk.com
 pow7.com
 proaudiotorrents.org
 public.tracker.vraphim.com
+pybittrack.retiolus.net
 qg.lorzl.gq
 r.l5.ca
 region.nl1.privex.cc
@@ -506,6 +524,7 @@ smurfsoft.com
 sparkle.ghostchu-services.top
 sugoi.pomf.se
 sukebei.tracker.wf
+t.213891.xyz
 t.acg.rip
 t.btcland.xyz
 t.jaekr.sh
@@ -523,6 +542,7 @@ tk1.trackerservers.com
 torrent-team.net
 torrent.arjlover.net
 torrent.fedoraproject.org
+torrent.hificode.in
 torrent.mp3quran.net
 torrent.resonatingmedia.com
 torrent.rus.ec
@@ -551,10 +571,12 @@ tracker-zhuqiy.dgj055.icu
 tracker.0x7c0.com
 tracker.23794.top
 tracker.36dm.com
+tracker.aburaya.live
 tracker.acgnx.se
 tracker.ali213.net
 tracker.anirena.com
 tracker.baltracker.net
+tracker.bitcoinindia.space
 tracker.bittor.pw
 tracker.breizh.pm
 tracker.bt-hash.com
@@ -565,6 +587,7 @@ tracker.bz
 tracker.cloudit.top
 tracker.coppersurfer.tk
 tracker.corpscorp.online
+tracker.cutie.dating
 tracker.darkness.services
 tracker.ddunlimited.net
 tracker.deadorbit.nl
@@ -595,12 +618,16 @@ tracker.ghostchu-services.top
 tracker.gigantino.net
 tracker.gigatorrents.ws
 tracker.gmi.gd
+tracker.healthcareindia.store
+tracker.hifimarket.in
+tracker.hifitechindia.com
 tracker.internetwarriors.net
 tracker.ipfsscan.io
 tracker.ipv6tracker.org
 tracker.itscraftsoftware.my.id
 tracker.jiesen.life
 tracker.kali.org
+tracker.kmzs123.cn
 tracker.leechshield.link
 tracker.lilithraws.cf
 tracker.lilithraws.org
@@ -619,13 +646,16 @@ tracker.open-internet.nl
 tracker.openbittorrent.com
 tracker.opentrackr.org
 tracker.pirateparty.gr
+tracker.plx.im
 tracker.pmman.tech
 tracker.pow7.com
+tracker.privateseedbox.xyz
 tracker.pussytorrents.org
 tracker.qu.ax
 tracker.renfei.net
 tracker.sbsub.com
 tracker.shittyurl.org
+tracker.skillindia.site
 tracker.skynetcloud.site
 tracker.skyts.cn
 tracker.skyts.net
@@ -647,18 +677,23 @@ tracker.torrenty.org
 tracker.torrust-demo.com
 tracker.trancetraffic.com
 tracker.tricitytorrents.com
+tracker.tritan.gg
 tracker.tryhackx.org
+tracker.valete.tf
 tracker.vanitycore.co
 tracker.vds.nz
 tracker.vraphim.com
 tracker.vulnix.sh
 tracker.waaa.moe
 tracker.webtorrent.dev
+tracker.wepzone.net
 tracker.xdvdz.com
 tracker.xfapi.top
 tracker.xiaoduola.xyz
 tracker.yemekyedim.com
+tracker.yume-hatsuyuki.moe
 tracker.zhuqiy.top
+tracker.zupix.online
 tracker1.520.jp
 tracker1.bt.moack.co.kr
 tracker1.ctix.cn
@@ -677,6 +712,7 @@ tracker810.xyz
 trackers.mlsub.net
 ttk2.nbaonlineservice.com
 uatracker.net
+udp.tracker.projectk.org
 utracker.ghostchu-services.top
 wepzone.net
 ws.peer.ooo
@@ -716,3 +752,4 @@ y.t-1.org
 yahor.of.by
 z.mercax.com
 z.paranoid.agency
+zupix.online

@@ -104,6 +104,7 @@
 176.56.7.89
 176.79.98.66
 176.99.7.59
+177.112.215.131
 177.112.215.4
 177.139.44.145
 177.139.47.236
@@ -248,6 +249,7 @@
 222.84.21.49
 222.84.22.86
 222.84.23.141
+23.134.88.11
 23.134.88.9
 23.134.89.9
 23.134.90.9
@@ -507,8 +509,10 @@ new-line.net
 ns-1.x-fins.com
 nyaa.tracker.wf
 odd-hd.fr
+open-tracker.demonoid.ch
 open.acgtracker.com
 open.demonii.com
+open.demonoid.ch
 open.dstud.io
 open.free-tracker.ga
 open.lolicon.eu
@@ -537,6 +541,7 @@ peertube.cpy.re
 potuk.com
 pow7.com
 proaudiotorrents.org
+public.demonoid.ch
 public.tracker.vraphim.com
 pybittrack.retiolus.net
 qg.lorzl.gq

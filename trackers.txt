@@ -80,6 +80,7 @@
 139.202.231.176
 139.202.231.249
 139.202.231.55
+140.235.237.23
 142.132.183.104
 142.171.85.76
 144.126.245.19
@@ -94,6 +95,7 @@
 152.249.214.53
 152.249.214.68
 152.249.214.74
+152.53.152.105
 152.67.8.255
 156.234.201.18
 157.131.124.190
@@ -195,6 +197,7 @@
 193.42.111.57
 194.110.247.18
 194.195.86.132
+194.62.248.73
 1c.premierzal.ru
 200.111.152.53
 200.111.152.54
@@ -212,6 +215,7 @@
 208.83.20.20
 209.141.59.16
 209.141.59.25
+209.50.255.93
 210.61.187.208
 210.61.187.209
 211.23.142.127
@@ -555,6 +559,7 @@ pybittrack.retiolus.net
 qg.lorzl.gq
 r.l5.ca
 region.nl1.privex.cc
+rekcart.duckdns.org
 retracker.lanta-net.ru
 retracker.lanta.me
 retracker.spark-rostov.ru
@@ -599,8 +604,10 @@ torrent.hificode.in
 torrent.mp3quran.net
 torrent.resonatingmedia.com
 torrent.rus.ec
+torrent.tracker.durukanbal.com
 torrent.ubuntu.com
 torrent.unix-ag.uni-kl.de
+torrentclub.online
 torrents-nn.cn
 torrents.artixlinux.org
 torrents.hikarinokiseki.com
@@ -626,9 +633,11 @@ tracker.23794.top
 tracker.36dm.com
 tracker.aburaya.live
 tracker.acgnx.se
+tracker.alaskantf.com
 tracker.ali213.net
 tracker.anirena.com
 tracker.baltracker.net
+tracker.belmult.online
 tracker.bitcoinindia.space
 tracker.bittor.pw
 tracker.breizh.pm
@@ -637,6 +646,7 @@ tracker.bt4g.com
 tracker.btorrent.xyz
 tracker.btsync.gq
 tracker.bz
+tracker.cloudbase.store
 tracker.cloudit.top
 tracker.coppersurfer.tk
 tracker.corpscorp.online
@@ -644,10 +654,12 @@ tracker.cutie.dating
 tracker.darkness.services
 tracker.ddunlimited.net
 tracker.deadorbit.nl
+tracker.dhitechnical.com
 tracker.dler.com
 tracker.dler.org
 tracker.dm258.cn
 tracker.dmcomic.org
+tracker.ducks.party
 tracker.dump.cl
 tracker.edkj.club
 tracker.eeptorrent.i2p
@@ -678,6 +690,7 @@ tracker.internetwarriors.net
 tracker.ipfsscan.io
 tracker.ipv6tracker.org
 tracker.itscraftsoftware.my.id
+tracker.jdx3.org
 tracker.jiesen.life
 tracker.kali.org
 tracker.kmzs123.cn
@@ -706,6 +719,7 @@ tracker.privateseedbox.xyz
 tracker.pussytorrents.org
 tracker.qu.ax
 tracker.renfei.net
+tracker.rescuecrew7.com
 tracker.sbsub.com
 tracker.shittyurl.org
 tracker.skillindia.site
@@ -713,6 +727,7 @@ tracker.skynetcloud.site
 tracker.skyts.cn
 tracker.skyts.net
 tracker.srv00.com
+tracker.startwork.cv
 tracker.tallpenguin.org
 tracker.tambovnet.org
 tracker.tamersunion.org
@@ -732,6 +747,8 @@ tracker.trancetraffic.com
 tracker.tricitytorrents.com
 tracker.tritan.gg
 tracker.tryhackx.org
+tracker.tvunderground.org.ru
+tracker.uraniumhexafluori.de
 tracker.valete.tf
 tracker.vanitycore.co
 tracker.vds.nz
@@ -756,6 +773,7 @@ tracker1.myporn.club
 tracker2.ctix.cn
 tracker2.dler.com
 tracker2.dler.org
+tracker2.itzmx.com
 tracker2.postman.i2p
 tracker3.dler.org
 tracker3.itzmx.com

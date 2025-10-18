@@ -42,6 +42,7 @@
 118.163.198.106
 118.25.157.230
 121.199.16.229
+123.245.62.100
 123.245.62.105
 123.245.62.106
 123.245.62.107
@@ -562,6 +563,7 @@ public.demonoid.ch
 public.tracker.vraphim.com
 pybittrack.retiolus.net
 qg.lorzl.gq
+qimlze77z7w32lx2ntnwkuqslrzlsqy7774v3urueuarafyqik5a.b32.i2p
 r.l5.ca
 region.nl1.privex.cc
 rekcart.duckdns.org
@@ -582,6 +584,7 @@ share.camoe.cn
 share.hkg-fansub.info
 shubt.net
 siambit.com
+sigmatracker.i2p
 smurfsoft.com
 sparkle.ghostchu-services.top
 sugoi.pomf.se

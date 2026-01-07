@@ -129,6 +129,7 @@
 177.139.47.18
 177.139.47.236
 177.139.47.40
+177.139.47.92
 177.144.178.170
 177.144.178.39
 177.172.61.249
@@ -585,6 +586,7 @@ irrenhaus.dyndns.dk
 isk.richardsw.club
 ismaarino.com
 jutone.com
+jvavav.com
 kaztorka.org
 kinorun.com
 leet-tracker.moe

@@ -69,17 +69,25 @@ include: "/etc/unbound/conf.d/trackers-block.conf"
 ```bash
 curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt" \
   | grep -E '^([0-9]{1,3}\.){3}[0-9]{1,3}$' \
-  | xargs -I{} iptables -A OUTPUT -d {} -j DROP
+  | while read -r ip; do
+      iptables -A INPUT   -s "$ip" -j DROP
+      iptables -A OUTPUT  -d "$ip" -j DROP
+      iptables -A FORWARD -d "$ip" -j DROP
+    done
 ```
+
+> For gateway/router setups add the FORWARD rule; for standalone hosts INPUT + OUTPUT is sufficient.
 
 ### /etc/hosts
 
 ```bash
 curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt" \
-  | grep -v '^[0-9]' \
+  | grep -vE '^([0-9]{1,3}\.){3}[0-9]{1,3}$' \
   | awk '{print "0.0.0.0 "$0}' \
   >> /etc/hosts
 ```
+
+> Uses a precise IPv4 regex to exclude bare IP addresses while keeping domains that start with digits (e.g. `7.rarbg.me`, `60-fps.org`).
 
 ## Data Sources
 

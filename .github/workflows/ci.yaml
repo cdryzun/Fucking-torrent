@@ -38,14 +38,22 @@ jobs:
           # Source 1: all standard trackers (UDP + HTTP + HTTPS + WS)
           fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt"
 
-          # Source 2: I2P trackers — maintained separately, NOT included in trackers_all.txt
+          # Source 2: WebSocket trackers — tracker.files.fm is maintained separately
+          # and is intentionally excluded from trackers_all.txt by upstream
+          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ws.txt"
+
+          # Source 3: I2P trackers — maintained separately, NOT included in trackers_all.txt
           fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_i2p.txt"
 
-          # Source 3: IP-address variants (Cloudflare IPs stripped by upstream)
+          # Source 4: IP-address variants (Cloudflare IPs stripped by upstream)
           fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt"
 
-          # Source 4: Yggdrasil network trackers — maintained separately
+          # Source 5: Yggdrasil network trackers — maintained separately
           fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_yggdrasil.txt"
+
+          # NOTE: trackers_all_yggdrasil_ip.txt is intentionally excluded.
+          # It contains Yggdrasil-internal IPv6 addresses (e.g. [200:...], [21e:...])
+          # that are not internet-routable and produce malformed entries when extracted.
 
           # Merge with current file to preserve any manually added entries
           cat "${OUTPUT_FILE}" >> "${TMP_FILE}" 2>/dev/null || true

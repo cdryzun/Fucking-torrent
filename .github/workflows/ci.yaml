@@ -2,6 +2,7 @@ name: Update Trackers Blocklist
 
 env:
   OUTPUT_FILE: "trackers.txt"
+  OUTPUT_V6_FILE: "trackers_v6.txt"
 
 on:
   schedule:
@@ -23,56 +24,57 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Fetch and aggregate tracker lists
+      - name: Clone upstream tracker list
+        run: git clone --depth=1 https://github.com/ngosang/trackerslist /tmp/upstream
+
+      - name: Extract and aggregate tracker entries
         run: |
-          TMP_FILE=$(mktemp)
+          TMP_ALL=$(mktemp)
+          TMP_V6=$(mktemp)
 
-          fetch_trackers() {
-            local url="$1"
-            echo "Fetching: ${url}"
-            curl -fsSL --retry 3 --retry-delay 5 "${url}" \
-              | awk -F '[/:]' 'NF>3 && /^(udp|http|https|ws|wss)/ {print $4}' >> "${TMP_FILE}" || \
-              echo "Warning: failed to fetch ${url}"
-          }
+          # Dynamically process every trackers_*.txt in the upstream repo.
+          # New files or renames are picked up automatically on the next run.
+          for txt_file in /tmp/upstream/trackers_*.txt; do
+            echo "Processing: $(basename "${txt_file}")"
 
-          # Source 1: all standard trackers (UDP + HTTP + HTTPS + WS)
-          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt"
+            # Domains and IPv4: split protocol://host:port/path on '/' and ':',
+            # field 4 is the hostname or bare IP.
+            awk -F '[/:]' 'NF>3 && /^(udp|http|https|ws|wss)/ {print $4}' \
+              "${txt_file}" >> "${TMP_ALL}"
 
-          # Source 2: WebSocket trackers — tracker.files.fm is maintained separately
-          # and is intentionally excluded from trackers_all.txt by upstream
-          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ws.txt"
+            # IPv6: extract address from bracket notation protocol://[addr]:port/path
+            grep -oE '(udp|http|https|ws|wss)://\[[^]]+\]' "${txt_file}" \
+              | sed 's|.*\[||; s|\]||' >> "${TMP_V6}"
+          done
 
-          # Source 3: I2P trackers — maintained separately, NOT included in trackers_all.txt
-          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_i2p.txt"
+          rm -rf /tmp/upstream
 
-          # Source 4: IP-address variants (Cloudflare IPs stripped by upstream)
-          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt"
+          # Merge with existing files to preserve any manually added entries
+          cat "${OUTPUT_FILE}"    >> "${TMP_ALL}" 2>/dev/null || true
+          cat "${OUTPUT_V6_FILE}" >> "${TMP_V6}"  2>/dev/null || true
 
-          # Source 5: Yggdrasil network trackers — maintained separately
-          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_yggdrasil.txt"
-
-          # NOTE: trackers_all_yggdrasil_ip.txt is intentionally excluded.
-          # It contains Yggdrasil-internal IPv6 addresses (e.g. [200:...], [21e:...])
-          # that are not internet-routable and produce malformed entries when extracted.
-
-          # Merge with current file to preserve any manually added entries
-          cat "${OUTPUT_FILE}" >> "${TMP_FILE}" 2>/dev/null || true
-
-          # Deduplicate, sort, strip blank lines, and validate entries.
-          # Only keep lines starting with a letter or digit (hostname / IPv4).
-          # This filters out malformed fragments such as "[200", "[302" that
-          # result from awk splitting IPv6 tracker URLs (udp://[::1]:port/...).
-          sort -u "${TMP_FILE}" \
+          # Deduplicate, sort, and validate
+          # Domains/IPv4: keep only lines starting with a letter or digit.
+          # This drops malformed awk fragments like "[200" that arise when
+          # the IPv6 extractor above is not used (belt-and-suspenders guard).
+          sort -u "${TMP_ALL}" \
             | sed '/^[[:space:]]*$/d' \
             | grep -E '^[a-zA-Z0-9]' \
             > "${OUTPUT_FILE}"
 
-          rm -f "${TMP_FILE}"
+          # IPv6: keep only lines that look like colon-separated hex groups
+          sort -u "${TMP_V6}" \
+            | sed '/^[[:space:]]*$/d' \
+            | grep -E '^[0-9a-fA-F:]+$' \
+            > "${OUTPUT_V6_FILE}"
 
-          # Report stats
-          NEW_COUNT=$(wc -l < "${OUTPUT_FILE}" | tr -d ' ')
+          rm -f "${TMP_ALL}" "${TMP_V6}"
+
+          NEW_COUNT=$(wc -l < "${OUTPUT_FILE}"    | tr -d ' ')
+          V6_COUNT=$(wc -l  < "${OUTPUT_V6_FILE}" | tr -d ' ')
           echo "NEW_COUNT=${NEW_COUNT}" >> "${GITHUB_ENV}"
-          echo "Total entries after update: ${NEW_COUNT}"
+          echo "V6_COUNT=${V6_COUNT}"   >> "${GITHUB_ENV}"
+          echo "Domains/IPv4: ${NEW_COUNT} entries, IPv6: ${V6_COUNT} entries"
 
       - name: Update Shields.io badge metadata
         run: |
@@ -90,10 +92,10 @@ jobs:
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add "${OUTPUT_FILE}" .shields/count.json
+          git add "${OUTPUT_FILE}" "${OUTPUT_V6_FILE}" .shields/count.json
           if git diff --cached --quiet; then
             echo "No changes detected, skipping commit."
           else
-            git commit -m "auto: Update trackers list $(date -u +'%Y-%m-%d %H:%M:%S UTC') [${NEW_COUNT} entries]"
+            git commit -m "auto: Update trackers list $(date -u +'%Y-%m-%d %H:%M:%S UTC') [${NEW_COUNT} + ${V6_COUNT} IPv6]"
             git push
           fi

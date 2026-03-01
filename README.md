@@ -12,7 +12,7 @@
 ## Overview
 
 A daily-updated, deduplicated blocklist aggregated from multiple upstream sources.
-Contains **domains and IP addresses** of known BitTorrent trackers, ready to drop into your firewall or DNS resolver.
+Contains **domains, IPv4 and IPv6 addresses** of known BitTorrent trackers, ready to drop into your firewall or DNS resolver.
 
 **Who is this for:**
 - Network admins blocking P2P traffic on corporate/campus networks
@@ -20,13 +20,19 @@ Contains **domains and IP addresses** of known BitTorrent trackers, ready to dro
 - Home lab setups with Pi-hole / dnsmasq
 - Security appliances (pfSense, OPNsense, Unbound, etc.)
 
-## Raw File
+## Output Files
+
+| File | Content | Use case |
+|------|---------|---------|
+| [`trackers.txt`](trackers.txt) | Domains and IPv4 addresses, one per line | DNS-based blocking, iptables, hosts file |
+| [`trackers_v6.txt`](trackers_v6.txt) | IPv6 addresses, one per line | ip6tables, IPv6-capable firewall rules |
+
+## Raw URLs
 
 ```
 https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt
+https://raw.githubusercontent.com/cdryzun/trackers/main/trackers_v6.txt
 ```
-
-One entry per line — either a **domain name** or a **bare IP address**.
 
 ## Usage
 
@@ -64,7 +70,7 @@ Then add to `unbound.conf`:
 include: "/etc/unbound/conf.d/trackers-block.conf"
 ```
 
-### iptables (IP addresses only)
+### iptables — IPv4
 
 ```bash
 curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt" \
@@ -77,6 +83,17 @@ curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt
 ```
 
 > For gateway/router setups add the FORWARD rule; for standalone hosts INPUT + OUTPUT is sufficient.
+
+### ip6tables — IPv6
+
+```bash
+curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers_v6.txt" \
+  | while read -r ip; do
+      ip6tables -A INPUT   -s "$ip" -j DROP
+      ip6tables -A OUTPUT  -d "$ip" -j DROP
+      ip6tables -A FORWARD -d "$ip" -j DROP
+    done
+```
 
 ### /etc/hosts
 
@@ -91,21 +108,16 @@ curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt
 
 ## Data Sources
 
-| Source | Files used | Notes |
-|--------|-----------|-------|
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all.txt` | All UDP/HTTP/HTTPS/WS trackers (123 entries) |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_ws.txt` | WebSocket trackers maintained separately by upstream (2 entries) |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_i2p.txt` | I2P network trackers — requires I2P router (12 entries) |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_ip.txt` | IP-address form, Cloudflare IPs stripped (64 entries) |
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_yggdrasil.txt` | Yggdrasil network tracker (1 entry) |
+The CI pipeline clones [ngosang/trackerslist](https://github.com/ngosang/trackerslist) on every run and **dynamically processes all `trackers_*.txt` files** — new files added or renamed upstream are picked up automatically.
 
-The pipeline extracts hostnames from full tracker URLs (strips protocol, port, and path),
-merges all sources, deduplicates, and sorts the result.
+Entries are split into two output files during extraction:
+- Domains and IPv4 → `trackers.txt`
+- IPv6 bracket-notation addresses → `trackers_v6.txt`
 
 ## Update Schedule
 
 Automatically updated every day at **04:15 UTC** via GitHub Actions.
-The [entries badge](#) above reflects the live count from the last successful run.
+The [entries badge](#) above reflects the live domain/IPv4 count from the last successful run.
 
 [Trigger a manual update](https://github.com/cdryzun/trackers/actions/workflows/ci.yaml) from the Actions tab.
 

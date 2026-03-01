@@ -47,8 +47,14 @@ jobs:
           # Merge with current file to preserve any manually added entries
           cat "${OUTPUT_FILE}" >> "${TMP_FILE}" 2>/dev/null || true
 
-          # Deduplicate, sort, and strip blank lines
-          sort -u "${TMP_FILE}" | sed '/^[[:space:]]*$/d' > "${OUTPUT_FILE}"
+          # Deduplicate, sort, strip blank lines, and validate entries.
+          # Only keep lines starting with a letter or digit (hostname / IPv4).
+          # This filters out malformed fragments such as "[200", "[302" that
+          # result from awk splitting IPv6 tracker URLs (udp://[::1]:port/...).
+          sort -u "${TMP_FILE}" \
+            | sed '/^[[:space:]]*$/d' \
+            | grep -E '^[a-zA-Z0-9]' \
+            > "${OUTPUT_FILE}"
 
           rm -f "${TMP_FILE}"
 

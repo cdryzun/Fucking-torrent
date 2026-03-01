@@ -91,9 +91,12 @@ curl -fsSL "https://raw.githubusercontent.com/cdryzun/trackers/main/trackers.txt
 
 ## Data Sources
 
-| Source | Files used |
-|--------|-----------|
-| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all.txt`, `trackers_best.txt`, `trackers_all_https.txt` |
+| Source | Files used | Notes |
+|--------|-----------|-------|
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all.txt` | All UDP/HTTP/HTTPS/WS trackers (118 entries) |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_i2p.txt` | I2P network trackers — maintained separately (10 entries) |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_ip.txt` | IP-address form, Cloudflare IPs stripped (61 entries) |
+| [ngosang/trackerslist](https://github.com/ngosang/trackerslist) | `trackers_all_yggdrasil.txt` | Yggdrasil network trackers (1 entry) |
 
 The pipeline extracts hostnames from full tracker URLs (strips protocol, port, and path),
 merges all sources, deduplicates, and sorts the result.

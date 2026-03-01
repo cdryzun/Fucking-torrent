@@ -1,4 +1,4 @@
-name: CI
+name: Update Trackers Blocklist
 
 env:
   OUTPUT_FILE: "trackers.txt"
@@ -9,53 +9,74 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-    greeting_job:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
-            uses: GuillaumeFalourd/clone-github-repo-action@v2.3
-            with:
-              depth: 1
-              branch: 'master'
-              owner: 'ngosang'
-              repository: 'trackerslist'
-          - name: "Generate trackers list"
-            run: |
-                # Exec scripts
-                ls -la
-                for txt in `find . -type f|grep '.txt'`;do cat "${txt}"|awk -F '[/:]' '{print $4}';done|sort|uniq > ${OUTPUT_FILE}
-                # delete empty lines
-                sed -i '/^$/d' ${OUTPUT_FILE}
-          - name: "Checkout"
-            uses: actions/checkout@v4
-            with:
-              persist-credentials: false
-              fetch-depth: 0
-              path: 'fuck-tracker'
-          - name: "Commit and push"
-            run: |
-              #  install openssh & add sshkey auth 
-              sudo apt update
-              sudo apt install -y openssh-client openssh-server
-              eval $(ssh-agent -s)
-              echo "${{ secrets.REPO_SSH_KEY }}" | ssh-add -
-              mkdir -p ~/.ssh
-              ssh-keyscan github.com >> ~/.ssh/known_hosts
-              chmod 0644 ~/.ssh/known_hosts
+  update-trackers:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
-              # copy & commit
-              cat fuck-tracker/${OUTPUT_FILE} >> ${OUTPUT_FILE}
-              cat ${OUTPUT_FILE}|sort|uniq > fuck-tracker/${OUTPUT_FILE}
-              
-               # delete empty lines
-              sed -i '/^$/d' fuck-tracker/${OUTPUT_FILE}
-              
-              cd fuck-tracker
-              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-              git config --global user.name "github-actions[bot]"
-              git add .
-              git commit -m "auto: Update trackers list $(date +'%Y-%m-%d %H:%M:%S')"
-              git remote set-url origin git@github.com:${{ github.repository }}.git
-              git push
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch and aggregate tracker lists
+        run: |
+          TMP_FILE=$(mktemp)
+
+          fetch_trackers() {
+            local url="$1"
+            echo "Fetching: ${url}"
+            curl -fsSL --retry 3 --retry-delay 5 "${url}" \
+              | awk -F '[/:]' 'NF>3 && /^(udp|http|https|ws|wss)/ {print $4}' >> "${TMP_FILE}" || \
+              echo "Warning: failed to fetch ${url}"
+          }
+
+          # Source 1: ngosang/trackerslist - all trackers
+          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt"
+
+          # Source 2: ngosang/trackerslist - best trackers
+          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt"
+
+          # Source 3: ngosang/trackerslist - all HTTPS trackers
+          fetch_trackers "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_https.txt"
+
+          # Merge with current file to preserve any manually added entries
+          cat "${OUTPUT_FILE}" >> "${TMP_FILE}" 2>/dev/null || true
+
+          # Deduplicate, sort, and strip blank lines
+          sort -u "${TMP_FILE}" | sed '/^[[:space:]]*$/d' > "${OUTPUT_FILE}"
+
+          rm -f "${TMP_FILE}"
+
+          # Report stats
+          NEW_COUNT=$(wc -l < "${OUTPUT_FILE}" | tr -d ' ')
+          echo "NEW_COUNT=${NEW_COUNT}" >> "${GITHUB_ENV}"
+          echo "Total entries after update: ${NEW_COUNT}"
+
+      - name: Update Shields.io badge metadata
+        run: |
+          mkdir -p .shields
+          cat > .shields/count.json <<EOF
+          {
+            "schemaVersion": 1,
+            "label": "entries",
+            "message": "${NEW_COUNT}",
+            "color": "blue"
+          }
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add "${OUTPUT_FILE}" .shields/count.json
+          if git diff --cached --quiet; then
+            echo "No changes detected, skipping commit."
+          else
+            git commit -m "auto: Update trackers list $(date -u +'%Y-%m-%d %H:%M:%S UTC') [${NEW_COUNT} entries]"
+            git push
+          fi

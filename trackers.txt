@@ -1,3 +1,4 @@
+004430.xyz
 0123456789nonexistent.com
 0d.kebhana.mx
 101.99.91.160
@@ -128,6 +129,7 @@
 159.195.43.181
 160.251.231.187
 167.253.78.20
+172.245.168.134
 173.201.36.219
 176.123.1.180
 176.32.38.223
@@ -415,6 +417,7 @@
 45.154.214.21
 45.154.96.35
 45.155.53.144
+45.7.231.102
 45.9.60.30
 46.232.55.100
 46.3.96.144
@@ -663,6 +666,7 @@ new-line.net
 ns-1.x-fins.com
 ns575949.ip-51-222-82.net
 nyaa.tracker.wf
+nyaaplus.i2p
 odd-hd.fr
 open-tracker.demonoid.ch
 open.acgtracker.com
@@ -774,6 +778,7 @@ tracker-de-2.cutie.dating
 tracker-de.ololosh.space
 tracker-udp.gbitt.info
 tracker-zhuqiy.dgj055.icu
+tracker.004430.xyz
 tracker.0x7c0.com
 tracker.1h.is
 tracker.23794.top
@@ -798,6 +803,7 @@ tracker.cloudbase.store
 tracker.cloudit.top
 tracker.coppersurfer.tk
 tracker.corpscorp.online
+tracker.cubonegro.org
 tracker.cutie.dating
 tracker.darkness.services
 tracker.ddunlimited.net
@@ -859,7 +865,9 @@ tracker.moeking.me
 tracker.monikadesign.uk
 tracker.moxing.party
 tracker.mywaifu.best
+tracker.nekomi.cn
 tracker.nighthawk.pw
+tracker.nyaa2p.i2p
 tracker.ololosh.space
 tracker.open-internet.nl
 tracker.openbittorrent.com

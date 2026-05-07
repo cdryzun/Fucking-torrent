@@ -413,6 +413,7 @@
 222.84.21.49
 222.84.22.86
 222.84.23.141
+23.134.124.81
 23.134.88.11
 23.134.88.9
 23.134.89.9
@@ -599,6 +600,7 @@
 94.136.190.183
 94.23.207.177
 94.243.222.100
+94.250.253.220
 95.217.167.10
 96.126.98.54
 a.leopard-raws.org
@@ -789,6 +791,7 @@ tehconnection.eu
 tk1.trackerservers.com
 torrent-team.net
 torrent.arjlover.net
+torrent.bowed.net
 torrent.fedoraproject.org
 torrent.hificode.in
 torrent.mp3quran.net

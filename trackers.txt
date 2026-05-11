@@ -119,6 +119,7 @@
 142.171.85.76
 144.126.245.19
 145.223.96.109
+147.45.74.251
 147.45.77.75
 148.113.168.115
 148.135.112.164
@@ -268,6 +269,7 @@
 189.18.126.32
 189.18.126.49
 189.18.127.125
+189.18.127.21
 189.18.127.57
 189.18.162.106
 189.18.162.54
@@ -1003,6 +1005,7 @@ tracker7.dler.org
 tracker810.xyz
 trackers.mlsub.net
 ttk2.nbaonlineservice.com
+u.peer-exchange.download
 uabits.today
 uatracker.net
 udp.tracker.projectk.org

@@ -34,6 +34,7 @@
 113.16.155.116
 113.16.155.146
 113.16.155.226
+113.16.155.243
 113.17.152.163
 113.17.152.249
 113.17.153.206
@@ -502,6 +503,7 @@
 64.112.43.194
 65.108.102.76
 66.154.105.124
+67.222.238.222
 68.193.189.231
 69.30.224.166
 69.30.233.234
@@ -587,6 +589,7 @@
 83.6.231.203
 83.6.233.63
 84.54.51.78
+85.121.5.80
 86.127.239.222
 86.127.250.81
 86.57.161.157
@@ -817,6 +820,7 @@ torrentsmd.com
 torrenttracker.nwc.acsalaska.net
 torrentzilla.org
 tr.bangumi.moe
+tr.btube3.com
 tr.fuckbitcoin.xyz
 tr.highstar.shop
 tr.kxmp.cf
@@ -841,6 +845,7 @@ tracker.acgnx.se
 tracker.alaskantf.com
 tracker.ali213.net
 tracker.anirena.com
+tracker.auctor.tv
 tracker.baltracker.net
 tracker.belmult.online
 tracker.bitcoinindia.space

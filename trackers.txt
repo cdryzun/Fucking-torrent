@@ -36,6 +36,7 @@
 113.16.153.116
 113.16.153.192
 113.16.153.249
+113.16.153.28
 113.16.153.98
 113.16.154.16
 113.16.154.70
@@ -162,6 +163,7 @@
 152.249.214.68
 152.249.214.74
 152.53.152.105
+152.53.194.103
 152.67.8.255
 152.89.29.128
 154.40.43.165
@@ -494,6 +496,7 @@
 49.13.133.10
 4olv65sj4ifeak26wqiifr3q2vjv5d44x733ncqhtd7cmjwoinpa.b32.i2p
 5.102.159.190
+5.135.104.146
 5.161.187.83
 5.181.156.41
 5.181.188.172
@@ -620,6 +623,7 @@
 87.106.210.134
 88.80.22.67
 89.110.76.229
+89.117.57.95
 89.234.156.205
 9.rarbg.com
 9.rarbg.me
@@ -682,6 +686,7 @@ bt2.54new.com
 bt2.archive.org
 bt2.edwardk.info
 btracker.top
+btrackrqkjp6kgelov5a3uxisis77ofxqt5nvy5hvvtoybjpmq4q.b32.i2p
 bttracker.debian.org
 btx.anifilm.tv
 buny.uk
@@ -896,6 +901,7 @@ tracker.dler.com
 tracker.dler.org
 tracker.dm258.cn
 tracker.dmcomic.org
+tracker.dorcus.digital
 tracker.ducks.party
 tracker.dump.cl
 tracker.edkj.club
@@ -958,6 +964,7 @@ tracker.open-internet.nl
 tracker.openbittorrent.com
 tracker.opentorrent.top
 tracker.opentrackr.org
+tracker.peerfect.org
 tracker.pirateparty.gr
 tracker.playground.ru
 tracker.plx.im

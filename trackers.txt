@@ -739,6 +739,7 @@ denis.stalker.upeer.me
 deviloid.net
 discord.heihachi.pw
 ed2k.vip
+edgev.duckdns.org
 ehtracker.org
 elitezones.ro
 evan.im

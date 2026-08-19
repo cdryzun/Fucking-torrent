@@ -376,6 +376,7 @@
 192.99.100.68
 193.148.251.143
 193.148.251.93
+193.164.155.221
 193.177.162.187
 193.187.90.12
 193.233.161.213
@@ -705,6 +706,7 @@ atrack.pow7.com
 baibako.tv
 banananetwork.qzz.io
 bandito.byterunner.io
+bdremux.club
 beertracker.ml
 big-boss-tracker.net
 bithq.org
